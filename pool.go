@@ -2,7 +2,7 @@ package pool
 
 const (
 	Max = 1024 // maximum memory overhead 76 MB
-	Size = 76490 // determined in trials on writing to disk and writing to memory
+	Size = 76512 // determined in trials on writing to disk and writing to memory
 )
 
 var pool = make(chan []byte, Max)
@@ -26,4 +26,12 @@ func Return(c []byte) {
 			default:
 		}
 	}
+}
+
+func Clean(c []byte) []byte {
+	l := len(c)
+	for i:=0; i<l; i++ {
+		c[i] = 0
+	}
+	return c
 }
