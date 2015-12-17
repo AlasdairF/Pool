@@ -1,0 +1,1 @@
+The Go package located at github.com/AlasdairF/Pool is public domain.
