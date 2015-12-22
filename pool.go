@@ -1,8 +1,8 @@
 package pool
 
 const (
-	Max = 1024 // maximum memory overhead 76 MB
-	Size = 76512 // determined in trials on writing to disk and writing to memory
+	Max = 1024 // maximum memory overhead 65 MB
+	Size = 65536 // determined in trials on writing to disk and writing to memory
 )
 
 var pool = make(chan []byte, Max)
